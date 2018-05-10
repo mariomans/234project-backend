@@ -8,10 +8,12 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import static com.sun.org.apache.xerces.internal.util.PropertyState.is;
-import static org.assertj.core.api.Java6Assertions.assertThat;
+import org.junit.Before;
+import org.junit.Test;
+import static org.hamcrest.Matchers.is;
+import static org.hamcrest.Matchers.nullValue;
 import static org.mockito.Mockito.mock;
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.mockito.Mockito.when;
 
 public class AuthenticationServiceImplTest {
@@ -28,8 +30,9 @@ public class AuthenticationServiceImplTest {
     @Test
     public void testAuthentication(){
         List<User> mockUser = new ArrayList<>();
-        when(userDao.getUser("hello","5558")).thenReturn(new User("hello","5558","Hi"));
-        assertThat(authenticationService.authenticate("hello","5558"), is(new User("hello","5558","Hi")))
+        when(userDao.getUser("Black","1234")).thenReturn(new User("Black","1234","Hee"));
+        assertThat(authenticationService.authenticate("Black" , "1234"), is(new User("Black","1234","student")));
+        assertThat(authenticationService.authenticate("Black" ,"1234"),is(nullValue()));
 
     }
 }
