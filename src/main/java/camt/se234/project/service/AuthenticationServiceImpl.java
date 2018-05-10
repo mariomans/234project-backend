@@ -17,11 +17,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
 
     @Override
     public User authenticate(String username, String password) {
-        if(username.contains(username)){
-            return userDao.getRole();
-        }else{
-            return null;
-        }
+        return userDao.getUser(username,password);
     }
 
 }
