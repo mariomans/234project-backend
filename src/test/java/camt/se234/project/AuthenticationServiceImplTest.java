@@ -31,9 +31,8 @@ public class AuthenticationServiceImplTest {
     public void testAuthentication(){
         List<User> mockUser = new ArrayList<>();
         when(userDao.getUser("Black","1234")).thenReturn(new User("Black","1234","Hee"));
-        assertThat(authenticationService.authenticate("Black" , "1234"), is(new User("Black","1234","student")));
-        assertThat(authenticationService.authenticate("Black" ,"1234"),is(nullValue()));
+        assertThat(authenticationService.authenticate("Black" , "1234"), is(new User("Black","1234","Hee")));
+        assertThat(authenticationService.authenticate("White" ,"1234"),is(nullValue()));
 
     }
 }
-
