@@ -36,9 +36,6 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public int getUnavailableProductSize() {
-        Product product;
-        if (product.getPrice() < 1) {
-            return getAllProducts().size() - getAvailableProducts().size();
-        }
+        return getAllProducts().size() - getAvailableProducts().size();
     }
 }
