@@ -12,8 +12,7 @@ install:
 - ls -l
 - docker build --build-arg JAR_FILE=/target/project.jar -t mariomans/234project-backend .
 - docker push mariomans/234project-backend
-- docker pull dto80/project234-frontend:latest
-
+- docker pull dto80/project234-frontend
 cache:
  directories:
  - "$HOME/.m2"

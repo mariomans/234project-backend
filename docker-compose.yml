@@ -1,7 +1,7 @@
 version: '3.3'
 services:
   frontend:
-    image: dto80/project234-frontend
+    image: dto80/project234-frontend:latest
     ports:
       - "8087:80"
     volumes :
@@ -9,8 +9,6 @@ services:
         source: ./settings
         target: /usr/share/nginx/html/assets
   backend:
-    image: mariomans/234project-backend
+    image: mariomans/234project-backend:latest
     ports:
       - "8086:8080"
-
-
